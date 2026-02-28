@@ -1,0 +1,74 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.env/
+.env.*
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# =========================
+# Data
+# =========================
+data/*.csv
+data/*.parquet
+data/*.json
+data/*.pkl
+
+# Allow small sample data if needed
+!data/sample/
+
+# =========================
+# Model artifacts
+# =========================
+app/models/*.pkl
+app/models/*.pt
+app/models/*.onnx
+
+# =========================
+# Logs
+# =========================
+logs/
+*.log
+
+# =========================
+# IDE
+# =========================
+.vscode/
+.idea/
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Docker
+# =========================
+*.env
+docker-compose.override.yml
+
+# =========================
+# Testing / coverage
+# =========================
+.coverage
+htmlcov/
+.pytest_cache/
+
+# =========================
+# Misc
+# =========================
+*.swp
+*.bak
