@@ -3,50 +3,83 @@
 # =========================
 __pycache__/
 *.py[cod]
-*$py.class
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
 
 # Virtual environments
+.venv/
 venv/
-.env/
-.env.*
+env/
 
-# Distribution / packaging
-build/
-dist/
-*.egg-info/
+# Python tooling
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
 
 # Jupyter
 .ipynb_checkpoints/
 
 # =========================
-# Data
+# Environment variables
 # =========================
-data/*.csv
-data/*.parquet
-data/*.json
-data/*.pkl
-
-# Allow small sample data if needed
-!data/sample/
-
-# =========================
-# Model artifacts
-# =========================
-app/models/*.pkl
-app/models/*.pt
-app/models/*.onnx
+.env
+.env.local
+.env.*.local
 
 # =========================
 # Logs
 # =========================
-logs/
 *.log
+logs/
 
 # =========================
-# IDE
+# ML artifacts
+# =========================
+ml/models/
+ml/artifacts/
+ml/checkpoints/
+
+# Processed/generated data
+ml/data/processed/
+ml/data/splits/
+
+# Optional: ignore raw datasets
+# Uncomment if dataset is huge
+ml/data/raw/
+
+# =========================
+# FastAPI / backend
+# =========================
+backend/.pytest_cache/
+backend/.mypy_cache/
+
+# =========================
+# Node / Next.js
+# =========================
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/build/
+
+# Package managers
+frontend/package-lock.json
+frontend/pnpm-lock.yaml
+frontend/yarn.lock
+
+# =========================
+# VS Code / IDE
 # =========================
 .vscode/
 .idea/
+*.swp
+*.swo
 
 # =========================
 # OS files
@@ -57,18 +90,17 @@ Thumbs.db
 # =========================
 # Docker
 # =========================
-*.env
-docker-compose.override.yml
+docker-data/
+*.tar
 
 # =========================
-# Testing / coverage
+# PostgreSQL
 # =========================
-.coverage
-htmlcov/
-.pytest_cache/
+postgres_data/
 
 # =========================
-# Misc
+# Temporary files
 # =========================
-*.swp
-*.bak
+tmp/
+temp/
+*.tmp
