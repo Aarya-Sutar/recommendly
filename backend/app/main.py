@@ -3,8 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.api.router import api_router
 from app.core.config import get_settings
-from app.db.session import Base, engine
-from app.db import models  # noqa: F401  # ensures SQLAlchemy registers tables
+from app.services.recommender import RecommenderService
 
 settings = get_settings()
 
@@ -26,4 +25,4 @@ app.include_router(api_router, prefix=settings.api_v1_prefix)
 
 @app.on_event("startup")
 def on_startup() -> None:
-    Base.metadata.create_all(bind=engine)
+    app.state.recommender = RecommenderService(settings)
